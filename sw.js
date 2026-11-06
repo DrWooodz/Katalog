@@ -3,7 +3,7 @@
      (stale-while-revalidate), so a new deploy reaches the phone on the launch after next without any version bump.
    - Pose model (pose/*, 16 MB) and CDN files (TensorFlow.js, Google Fonts): cached the first time they are used.
    SHELL must list every file under src/, css/ and icons/; test/sw.test.js fails if it doesn't. */
-const VERSION = "2026-11-06.3";
+const VERSION = "2026-11-06.4";
 const SHELL_CACHE = "katalog-shell-" + VERSION;
 const RUNTIME = "katalog-runtime-1";
 const SHELL = [
@@ -55,7 +55,9 @@ self.addEventListener("fetch", e=>{
   const req = e.request; if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.origin === self.location.origin){
-    if (req.mode === "navigate"){ e.respondWith(swr(req, "index.html").catch(()=>caches.match("index.html", {ignoreSearch:true}))); return; }
+    /* opening the app (its folder or index.html) gets the app shell; opening any other file shows that file */
+    const appPage = /\/(index\.html)?$/.test(url.pathname);
+    if (req.mode === "navigate" && appPage){ e.respondWith(swr(req, "index.html").catch(()=>caches.match("index.html", {ignoreSearch:true}))); return; }
     if (url.pathname.includes("/pose/")){ e.respondWith(cacheFirst(req)); return; }
     e.respondWith(swr(req)); return;
   }
