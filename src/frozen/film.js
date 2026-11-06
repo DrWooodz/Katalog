@@ -25,7 +25,7 @@ export function openFilm(i){
     '<p class="hint" style="margin:0">Film from the side, phone level at hip height and 3–5 m away, with your whole body and the bar in view. The video stays on this device and is not kept; only the numbers are saved to the set, and only if you press Save.</p>'+
     '<div class="row" style="gap:8px;flex-wrap:wrap;align-items:end"><label class="f" style="min-width:170px">Which set<select id="fs-set">'+
       l.sl.map((x,j)=>'<option value="'+j+'"'+(j===pick?' selected':'')+'>Set '+(j+1)+' · '+esc(String(wLabel(l.lift, r1(x.w)) || (r1(x.w)+' lb')))+' × '+(r1(x.reps) || r1(x.tgt) || '?')+'</option>').join('')+'</select></label>'+
-      '<button class="btn small primary" data-fs="pick">Record or choose a video</button><input type="file" id="fs-file" accept="video/*" hidden></div>'+
+      '<label class="btn small primary" for="fs-file" data-fs="pick">Record or choose a video</label><input type="file" id="fs-file" accept="video/*" class="sr"></div>'+
     '<video id="fs-video" playsinline muted controls preload="auto" hidden></video>'+
     '<div class="fprog" id="fs-progw" hidden><i id="fs-prog"></i></div><p class="hint" id="fs-status" aria-live="polite" style="margin:0"></p>'+
     '<div id="fs-res"></div></div>';
@@ -76,13 +76,15 @@ export function renderFilmRes(){
   h += L.map(([c,t])=>'<p class="fnote '+c+'">'+t+'</p>').join('');
   h += '<p class="hint" style="margin:0">Speeds are measured at the '+(/squat/i.test(FILM.lift) ? 'shoulders (where the bar sits)' : /pull-up/i.test(FILM.lift) ? 'shoulders' : 'hands')+', scaled from your leg measurements, so the percentage drop is more reliable than the speeds themselves. Reps in reserve: ±2 reps.</p>';
   h += sure ? '<div class="row"><button class="btn small primary" data-fs="save">Save to set '+(j+1)+'</button><button class="btn small" data-fs="close">Discard</button></div>'
-    : '<div class="row"><button class="btn small" data-fs="pick">Try another video</button><button class="btn small" data-fs="close">Close</button></div>';
+    : '<div class="row"><label class="btn small" for="fs-file" data-fs="pick">Try another video</label><button class="btn small" data-fs="close">Close</button></div>';
   el.innerHTML = h;
 }
 export function filmClick(e){
   const t = e.target.closest("[data-fs]"); if (!t) return;
   if (t.dataset.fs==="close"){ closeFilm(); return; }
-  if (t.dataset.fs==="pick"){ const f = FILM.el && FILM.el.querySelector("#fs-file"); if (f && !FILM.busy){ f.value = ""; f.click(); } return; }
+  /* the picker opens from a <label> tied to the file input, so the tap itself opens it (a script click on a hidden
+     input was blocked inside the Claude artifact's frame). Here we only clear the old choice, or block it while tracking. */
+  if (t.dataset.fs==="pick"){ const f = FILM.el && FILM.el.querySelector("#fs-file"); if (FILM.busy){ e.preventDefault(); return; } if (f) f.value = ""; return; }
   if (t.dataset.fs==="save"){
     const R = FILM.res, l = S.draft && S.draft.lifts[FILM.i]; if (!R || R.err || R.conf < 0.4) return;
     if (!l || l.lift !== FILM.lift){ toast("The lifts changed while filming. Open Film a set again."); return; }

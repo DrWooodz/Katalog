@@ -3,7 +3,7 @@
      (stale-while-revalidate), so a new deploy reaches the phone on the launch after next without any version bump.
    - Pose model (pose/*, 16 MB) and CDN files (TensorFlow.js, Google Fonts): cached the first time they are used.
    SHELL must list every file under src/, css/ and icons/; test/sw.test.js fails if it doesn't. */
-const VERSION = "2026-11-06.1";
+const VERSION = "2026-11-06.2";
 const SHELL_CACHE = "katalog-shell-" + VERSION;
 const RUNTIME = "katalog-runtime-1";
 const SHELL = [

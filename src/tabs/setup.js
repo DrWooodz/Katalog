@@ -39,7 +39,7 @@ export function vSetup(){
   const canShare = (()=>{ try{ return !!(navigator.canShare && navigator.canShare({files:[new File(["{}"], "k.json", {type:"application/json"})]})); }catch(e){ return false; } })();
   h += '<div class="panel"><h2>Backup</h2><p class="hint">Your log lives on this device only (in this browser\'s storage'+(S.persisted ? ', marked as persistent' : '')+'). Clearing site data or deleting the app erases it, so save a backup now and then. The same file restores here or in the old Send Log artifact, and it\'s what to hand Claude for a log review.</p>'+
     '<div class="row"><button class="btn" data-act="export">Save backup file</button>'+(canShare?'<button class="btn" data-act="share">Share backup file</button>':'')+'<button class="btn" data-act="copy">Copy backup text</button></div>'+
-    '<div class="row"><label class="btn" style="display:inline-block">Restore from file<input type="file" id="imp-file" accept=".json,application/json,text/plain" class="sr"></label></div>'+
+    '<div class="row"><label class="btn">Restore from file<input type="file" id="imp-file" accept=".json,application/json,text/plain" class="sr"></label></div>'+
     '<label class="f">Or paste backup text<textarea id="imp" placeholder="Paste backup JSON here"></textarea></label><div class="row"><button class="btn" data-act="import">Restore</button><span class="hint" id="imp-msg"></span></div>'+
     '<p class="hint">Restoring adds sessions or replaces ones with the same id; it never deletes any. It also replaces your settings with the backup\'s.</p></div>';
   h += '<p class="hint" style="text-align:center">Katalog '+APP_VERSION+' · from '+esc(PORTED_FROM)+'</p>';
