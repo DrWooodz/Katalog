@@ -2,7 +2,7 @@
   "name": "Katalog",
   "short_name": "Katalog",
   "description": "Training log for lifting, climbing, hangs and tendon work.",
-  "id": "./",
+  "id": "/Katalog/",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

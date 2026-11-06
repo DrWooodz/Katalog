@@ -3,7 +3,7 @@
      (stale-while-revalidate), so a new deploy reaches the phone on the launch after next without any version bump.
    - Pose model (pose/*, 16 MB) and CDN files (TensorFlow.js, Google Fonts): cached the first time they are used.
    SHELL must list every file under src/, css/ and icons/; test/sw.test.js fails if it doesn't. */
-const VERSION = "2026-11-06.2";
+const VERSION = "2026-11-06.3";
 const SHELL_CACHE = "katalog-shell-" + VERSION;
 const RUNTIME = "katalog-runtime-1";
 const SHELL = [
@@ -26,6 +26,12 @@ const CDN = /^https:\/\/(cdn\.jsdelivr\.net|fonts\.googleapis\.com|fonts\.gstati
 
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(SHELL_CACHE).then(c=>c.addAll(SHELL.map(u=>new Request(u, {cache:"reload"})))).then(()=>self.skipWaiting()));
+});
+/* Other apps on this origin (drwooodz.github.io, e.g. DaCapo) can delete every cache but their own when they update.
+   The page asks on each launch; if the app shell cache is gone or partial, it is filled again. */
+self.addEventListener("message", e=>{
+  if (!e.data || e.data.type !== "ensure-cache") return;
+  e.waitUntil(caches.open(SHELL_CACHE).then(c=>c.keys().then(k=>k.length >= SHELL.length || c.addAll(SHELL))).catch(()=>{}));
 });
 self.addEventListener("activate", e=>{
   e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith("katalog-shell-") && k!==SHELL_CACHE).map(k=>caches.delete(k))))
