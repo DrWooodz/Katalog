@@ -1,8 +1,8 @@
 # Katalog: notes for Claude
 
 Katalog is a phone home-screen training log (lifting, climbing, max hangs, wrist/tendon work, handstands), ported from
-the "Send Log" Claude artifact (v32). It is a static site on GitHub Pages: plain ES modules, **no build step**, data
-on the device in IndexedDB.
+the "Send Log" Claude artifact (v32). It is a static site served by Cloudflare at https://katalog.drwooodz.workers.dev/ (deployed
+automatically from `main`): plain ES modules, **no build step**, data on the device in IndexedDB.
 
 The program context (goals, plan design, decisions and why) lives in the claude.ai Project "Train", in
 `claude/sendlog-handoff.md` and `claude/sendlog-review-2026-11-06.md`. Read those for training questions, not this repo.
@@ -12,7 +12,7 @@ The program context (goals, plan design, decisions and why) lives in the claude.
 - **Read only the files the task needs.** Use the map below to pick them; don't read the whole tree, and never read
   `src/frozen/sim.js` (4,000 lines) unless the task is about the simulator itself.
 - Before finishing: `npm test` (Node 22+, no install needed). All tests must pass.
-- Commit in small steps with clear messages. Push to `main` publishes the site (GitHub Pages, ~1 min).
+- Commit in small steps with clear messages. Push to `main` publishes the site (Cloudflare, ~1 min).
 - Keep files under ~400 lines (a test enforces it). Split by responsibility, not by line count.
 - `src/logic/` and `src/data/` must not touch the DOM: tests import them in Node.
 - When you add, rename or delete a file under `src/`, `css/` or `icons/`, update `SHELL` in `sw.js` (a test checks)
