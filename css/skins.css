@@ -1,0 +1,47 @@
+/* ---------- skins (each is a deliberate single look, so they set every token) ---------- */
+:root[data-skin="ink"]{
+  --bg:#0c0c0e; --surface:#151518; --sunk:#101013; --ink:#ece8df; --muted:#aaa59b; --faint:#6e6a63; --line:#2b2a2e;
+  --accent:#e2452f; --accent-ink:#fff8f0; --warn:#f0a44a; --ok:#58c48a; --bad:#ff6b5a;
+  --t-bench:#3987e5; --t-dead:#d95926; --t-light:#199e70; --t-limit:#c98500; --t-ohp:#d55181; --t-squat:#9085e9; --t-other:#6d7480;
+  --display:"Yuji Syuku","Shippori Mincho",Georgia,serif; color-scheme:dark}
+:root[data-skin="ink"] body{background:
+  radial-gradient(120% 60% at 110% -10%, rgba(226,69,47,.10), transparent 60%),
+  url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='300' viewBox='0 0 900 300'><path d='M-20 230 C 120 170 260 150 420 160 S 700 120 930 60' fill='none' stroke='%23ece8df' stroke-opacity='0.05' stroke-width='38' stroke-linecap='round'/><path d='M-20 262 C 160 220 330 210 520 214 S 760 190 930 150' fill='none' stroke='%23ece8df' stroke-opacity='0.035' stroke-width='14' stroke-linecap='round'/></svg>") no-repeat center 140px / 140% auto, var(--bg)}
+:root[data-skin="ink"] .skinmark{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:10px;vertical-align:-4px;background:var(--accent);color:var(--accent-ink);font-family:"Yuji Syuku",serif;font-size:19px;border-radius:3px;transform:rotate(-4deg)}
+:root[data-skin="ink"] .skinmark::after{content:"力"}
+:root[data-skin="ink"] .brand h1{font-weight:400;text-transform:none;letter-spacing:.04em}
+:root[data-skin="ink"] .panel{border-color:#232327}
+:root[data-skin="ink"] .panel h2{color:var(--accent);letter-spacing:.14em}
+:root[data-skin="ink"] .big,:root[data-skin="ink"] .tg .v,:root[data-skin="ink"] .kpi .val,:root[data-skin="ink"] .mcard h3{font-weight:400}
+:root[data-skin="ink"] nav.tabs button[aria-selected="true"]{border-bottom-color:var(--accent)}
+
+:root[data-skin="arcade"]{
+  --bg:#0a0720; --surface:#120e30; --sunk:#0d0a26; --ink:#e9f2ff; --muted:#a7b0d8; --faint:#6d74a3; --line:#2a2560;
+  --accent:#33e1ff; --accent-ink:#06102a; --warn:#ffcf3d; --ok:#4dff9a; --bad:#ff4f7b;
+  --t-bench:#3987e5; --t-dead:#d95926; --t-light:#199e70; --t-limit:#c98500; --t-ohp:#d55181; --t-squat:#9085e9; --t-other:#6d7480;
+  --display:"Press Start 2P","Courier New",monospace; color-scheme:dark}
+:root[data-skin="arcade"] body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;background:repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 3px)}
+:root[data-skin="arcade"] .skinmark{display:inline-block;margin-right:10px;color:var(--ok);font-size:11px;vertical-align:4px;animation:pulse 1.2s steps(2) infinite}
+:root[data-skin="arcade"] .skinmark::after{content:"1UP"}
+:root[data-skin="arcade"] .brand h1{font-size:18px;letter-spacing:.06em}
+:root[data-skin="arcade"] nav.tabs button{font-size:8px;letter-spacing:0;padding:10px 2px}
+:root[data-skin="arcade"] .panel{border:2px solid var(--line);border-radius:4px;box-shadow:4px 4px 0 #050314}
+:root[data-skin="arcade"] .panel h2{font-size:10px;color:var(--accent)}
+:root[data-skin="arcade"] .big{font-size:18px;line-height:1.4}
+:root[data-skin="arcade"] .tg .v,:root[data-skin="arcade"] .kpi .val,:root[data-skin="arcade"] .meter .val{font-size:15px;line-height:1.4}
+:root[data-skin="arcade"] .kpi .val small,:root[data-skin="arcade"] .meter .val small{font-size:10px}
+:root[data-skin="arcade"] .mcard h3,:root[data-skin="arcade"] .hitem .d,:root[data-skin="arcade"] .sub h3{font-size:12px;line-height:1.5}
+:root[data-skin="arcade"] .lb-time,:root[data-skin="arcade"] .timer .clock{font-size:18px}
+:root[data-skin="arcade"] button.btn{border-radius:2px}
+:root[data-skin="arcade"] button.btn.primary{box-shadow:3px 3px 0 #050314}
+
+:root[data-skin="summit"]{
+  --bg:#e9ede4; --surface:#fafbf6; --sunk:#f1f3ec; --ink:#1d2a22; --muted:#56635a; --faint:#859087; --line:#cfd6c9;
+  --accent:#2f6b4f; --accent-ink:#ffffff; --warn:#a85b0c; --ok:#2f7a3e; --bad:#b0281c;
+  --t-bench:#2a78d6; --t-dead:#eb6834; --t-light:#1baf7a; --t-limit:#eda100; --t-ohp:#e87ba4; --t-squat:#6250d6; --t-other:#8a919b;
+  --display:"Bitter",Georgia,serif; color-scheme:light}
+:root[data-skin="summit"] body{background:repeating-radial-gradient(circle at 85% 8%, transparent 0 22px, rgba(47,107,79,.07) 22px 23px), repeating-radial-gradient(circle at 5% 70%, transparent 0 26px, rgba(47,107,79,.05) 26px 27px), var(--bg)}
+:root[data-skin="summit"] .skinmark{display:inline-block;width:0;height:0;margin-right:10px;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:20px solid var(--accent);vertical-align:-1px}
+:root[data-skin="summit"] .brand h1{text-transform:none;letter-spacing:0;font-size:26px}
+:root[data-skin="summit"] .big,:root[data-skin="summit"] .tg .v,:root[data-skin="summit"] .kpi .val{font-size:28px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

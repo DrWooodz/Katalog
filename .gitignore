@@ -1,0 +1,8 @@
+# Your training data never goes in git (the repo is public).
+local/
+*.backup.json
+katalog-*.json
+send-log-*.json
+real-*.json
+node_modules/
+.DS_Store
