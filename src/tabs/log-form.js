@@ -1,3 +1,4 @@
+/* readForm(): copies the Log form's inputs into the draft; hangDone(). */
 import { S } from "../core/state.js";
 import { num, today } from "../core/util.js";
 import { deriveRow, ensureSL, r1 } from "../logic/sets.js";

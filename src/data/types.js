@@ -1,3 +1,4 @@
+/* Session types, lift lists, grades, DEFAULT_PROFILE, plate colours, barbell lifts. Re-exports a few rules from rules.js. */
 export const TYPES = {
   bench:{label:"Bench + fingers", short:"Bench", c:"var(--t-bench)"},
   dead:{label:"Deadlift + fingers", short:"Deadlift", c:"var(--t-dead)"},

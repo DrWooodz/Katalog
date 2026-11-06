@@ -1,3 +1,4 @@
+/* All button actions (data-act) and tab clicks. */
 import { S } from "../core/state.js";
 import { $, gradeN, lsSet, num, toast, today } from "../core/util.js";
 import { bodyCache } from "../frozen/sim-bridge.js";

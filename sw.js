@@ -15,7 +15,7 @@ const SHELL = [
   "src/data/compendium.js", "src/data/plans.js", "src/data/playbook.js", "src/data/refs.js", "src/data/rules.js", "src/data/types.js",
   "src/events/backup.js", "src/events/change.js", "src/events/click.js",
   "src/frozen/film.js", "src/frozen/sim-bridge.js", "src/frozen/sim-log.js", "src/frozen/sim.js", "src/frozen/stats-model.js",
-  "src/logic/climb.js", "src/logic/draft.js", "src/logic/plan.js", "src/logic/progression.js", "src/logic/sets.js",
+  "src/logic/climb.js", "src/logic/draft.js", "src/logic/engine.js", "src/logic/plan.js", "src/logic/profile.js", "src/logic/progression.js", "src/logic/sets.js",
   "src/logic/status.js", "src/logic/week.js", "src/logic/wrist.js",
   "src/store/db.js", "src/store/store.js",
   "src/tabs/history.js", "src/tabs/limit.js", "src/tabs/log-form.js", "src/tabs/log.js", "src/tabs/method.js",

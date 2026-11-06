@@ -1,3 +1,4 @@
+/* Live session engine: interval timers, rest timer, stopwatch, beeps, wake lock, the bottom live bar, undo stack, saveDraft. */
 import { S } from "../core/state.js";
 import { esc, lsSet, mmss, toast } from "../core/util.js";
 

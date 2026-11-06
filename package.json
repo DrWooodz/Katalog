@@ -1,0 +1,10 @@
+{
+  "name": "katalog",
+  "private": true,
+  "description": "Katalog training log: a phone home-screen app (PWA). No build step; tests run on Node 22+.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "fixture": "node test/fixtures/make-synthetic.mjs"
+  }
+}

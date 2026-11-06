@@ -4,6 +4,7 @@
    hangs earning hangs, limit sessions ending on fingers, wrist pain above 5, handstand levels, a filmed set.
    Run: node test/fixtures/make-synthetic.mjs */
 import { writeFileSync } from "node:fs";
+import { deriveRow } from "../../src/logic/sets.js";
 
 let n = 0;
 const id = () => "syn" + String(++n).padStart(3, "0");
@@ -11,7 +12,8 @@ const T0 = Date.UTC(2026, 8, 1);
 const created = d => T0 + (Date.UTC(+d.slice(0,4), +d.slice(5,7)-1, +d.slice(8,10)) - T0) + 17*3600e3;
 /* a set list: [w, reps, target, st] */
 const sets = (...a) => a.map(([w, reps, tgt, st]) => ({w, reps, tgt: tgt ?? reps, st: st ?? "ok"}));
-const row = (lift, role, sl, extra) => Object.assign({lift, role, sl}, extra || {});
+/* rows carry the derived w/reps/sets/clean fields, as the app saves them */
+const row = (lift, role, sl, extra) => deriveRow(Object.assign({lift, role, sl}, extra || {}));
 const base = (date, type, more) => Object.assign({
   id: id(), date, type, created: created(date), readiness: {fingers:"g", back:"g", press:"g"},
   lifts: [], fingers: {done:false}, climb: {on:false}, wb: {done:false}, hs: {done:false},
@@ -55,7 +57,7 @@ benchTops.forEach(([d, w, st], i) => {
   }));
 });
 // a filmed bench set with speeds
-S[S.length-3].lifts[0].sl[0].vid = {n:3, v:[0.42,0.39,0.33], loss:0.21, rir:2, at:T0};
+S.find(s=>s.date==="2026-10-26").lifts[0].sl[0].vid = {n:3, v:[0.42,0.39,0.33], loss:0.21, rir:2, at:T0};
 // Limit bouldering: projects, a send, sessions ending on fingers
 const lim = [
   ["2026-09-24", [prob("Red cave","V6",6,"sent","Crimp"), prob("Blue roof","V7",8,"high","Steep power"), prob("","V6",3,"sent","Sloper")], "quality"],

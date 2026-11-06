@@ -1,3 +1,4 @@
+/* Wrist block progression (nextWrist) and handstand levels (nextHand). */
 import { deloadOn, sorted } from "../core/state.js";
 import { num, r5 } from "../core/util.js";
 import { HS_LEVELS } from "../data/plans.js";

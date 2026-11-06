@@ -1,3 +1,4 @@
+/* Log tab: the session form (vLog), live panel, hang and hold status lines. */
 import { S } from "../core/state.js";
 import { clock, esc, mmss, num } from "../core/util.js";
 import { HS_LEVELS, WRIST_PHASES } from "../data/plans.js";

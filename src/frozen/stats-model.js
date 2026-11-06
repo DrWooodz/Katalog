@@ -1,3 +1,4 @@
+/* FROZEN. Stats panels through the body model: hard sets per muscle, strength balance, setup changes, filmed sets. */
 import { S, liftName, sorted } from "../core/state.js";
 import { clampN, dayNum, epley, esc, lsGet, lsSet, num, shortD, today } from "../core/util.js";
 import { REFS } from "../data/refs.js";

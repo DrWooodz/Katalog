@@ -1,3 +1,4 @@
+/* Fatigue signals, plan end conditions (planStatus), PRs, bodyweight by date (bwAt), e1RM series. */
 import { S, daysAgo, deloadOn, liftName, sorted } from "../core/state.js";
 import { epley, gradeN, num } from "../core/util.js";
 import { MAIN, TYPES } from "../data/types.js";

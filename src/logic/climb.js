@@ -1,3 +1,4 @@
+/* Max hangs (fingerInfo), limit bouldering targets (limitTargets), projects across sessions (projectMap). */
 import { S, adaptive, daysAgo, deloadOn, isFinger, refDay, sorted } from "../core/state.js";
 import { num } from "../core/util.js";
 import { PROG_RANK } from "../data/types.js";

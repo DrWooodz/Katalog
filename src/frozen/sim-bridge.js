@@ -1,3 +1,4 @@
+/* FROZEN. Loads sim.js on demand, mounts the Build tab, gives the simulator read-only copies of your data. */
 import { S } from "../core/state.js";
 import { epley, toast, today } from "../core/util.js";
 import { SIMX } from "./sim-log.js";

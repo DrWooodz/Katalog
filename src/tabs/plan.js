@@ -1,3 +1,4 @@
+/* Plan tab (read-only). */
 import { S, isFinger, liftName } from "../core/state.js";
 import { addDays, epley, esc, fmtDate } from "../core/util.js";
 import { COVERAGE, GOAL_NAME, GOAL_TIER, GOAL_TIERS, PDAY, PLANS } from "../data/plans.js";

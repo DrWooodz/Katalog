@@ -1,3 +1,4 @@
+/* The live app state S (sessions, profile, draft, readiness, tab) and REF/asOf: the date plans are made for. sorted(), deloadOn(), adaptive(). */
 import { dayNum, lsGet, today } from "./util.js";
 import { DEFAULT_PROFILE, MAIN } from "../data/types.js";
 
@@ -6,7 +7,7 @@ import { DEFAULT_PROFILE, MAIN } from "../data/types.js";
 export let REF = null;
 export const refDay = () => REF ? REF.date : today();
 export const daysAgo = s => s ? Math.round(dayNum(refDay()) - dayNum(s)) : null;
-document.documentElement.dataset.skin = lsGet("sl.skin", "chalk");
+if (typeof document !== "undefined") document.documentElement.dataset.skin = lsGet("sl.skin", "chalk");   /* guarded so node tests can import the logic */
 /* ---------- state ---------- */
 export const S = {
   mode:"local", sessions:[], profile:JSON.parse(JSON.stringify(DEFAULT_PROFILE)),

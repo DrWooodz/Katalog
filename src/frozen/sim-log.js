@@ -1,3 +1,4 @@
+/* FROZEN. The model in the log: setup cues, missed-set notes, so-so readiness setup tweaks (filled in after the log paints). */
 import { S } from "../core/state.js";
 import { esc, num, today } from "../core/util.js";
 import { SIM_LIFTS } from "../data/types.js";

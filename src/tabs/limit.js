@@ -1,3 +1,4 @@
+/* Log tab, limit bouldering: problem tiles, editor sheet, meters, pinned session card. */
 import { S } from "../core/state.js";
 import { esc, gradeN, mmss, num } from "../core/util.js";
 import { GRADES, LIMIT_PLAN, PROGRESS, STYLES } from "../data/types.js";

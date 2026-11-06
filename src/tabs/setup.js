@@ -1,4 +1,6 @@
+/* Setup tab: mode, skins, maxes, plates, rest timers, plan days, percent chart, backup. */
 import { JUMP, MAXMODE, TOP, pct, pctOff } from "../data/rules.js";
+import { APP_VERSION, PORTED_FROM } from "../version.js";
 import { S, adaptive } from "../core/state.js";
 import { esc, fmtDate, r5 } from "../core/util.js";
 import { PLATE_SET, TYPES } from "../data/types.js";
@@ -40,5 +42,6 @@ export function vSetup(){
     '<div class="row"><label class="btn" style="display:inline-block">Restore from file<input type="file" id="imp-file" accept=".json,application/json,text/plain" class="sr"></label></div>'+
     '<label class="f">Or paste backup text<textarea id="imp" placeholder="Paste backup JSON here"></textarea></label><div class="row"><button class="btn" data-act="import">Restore</button><span class="hint" id="imp-msg"></span></div>'+
     '<p class="hint">Restoring adds sessions or replaces ones with the same id; it never deletes any. It also replaces your settings with the backup\'s.</p></div>';
+  h += '<p class="hint" style="text-align:center">Katalog '+APP_VERSION+' · from '+esc(PORTED_FROM)+'</p>';
   return h;
 }

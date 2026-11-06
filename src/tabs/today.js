@@ -1,3 +1,4 @@
+/* Today tab. */
 import { GAPS } from "../data/rules.js";
 import { S, adaptive, daysAgo, deloadOn, liftName } from "../core/state.js";
 import { esc, fmtDate, today } from "../core/util.js";

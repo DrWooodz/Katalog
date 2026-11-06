@@ -1,3 +1,4 @@
+/* Barbell loading: plates per side, the bar SVG, belt plates for hangs. */
 import { esc, num } from "../core/util.js";
 import { BARBELL_LIFTS, PLATE_LOOK } from "../data/types.js";
 import { barWeight, platesAvail } from "../logic/plan.js";

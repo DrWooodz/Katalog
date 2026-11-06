@@ -94,7 +94,12 @@
        "tgt": 3,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 255,
+     "reps": 3,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -150,7 +155,12 @@
        "tgt": 5,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 95,
+     "reps": 5,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -196,7 +206,12 @@
       }
      ],
      "ps": 1,
-     "pw": 250
+     "pw": 250,
+     "w": 250,
+     "reps": 3,
+     "sets": 1,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Bench",
@@ -216,7 +231,12 @@
       }
      ],
      "ps": 2,
-     "pw": 205
+     "pw": 205,
+     "w": 205,
+     "reps": 5,
+     "sets": 2,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Weighted pull-up",
@@ -242,7 +262,12 @@
       }
      ],
      "ps": 3,
-     "pw": 0
+     "pw": 0,
+     "w": 0,
+     "reps": 5,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -310,7 +335,12 @@
       }
      ],
      "ps": 1,
-     "pw": 255
+     "pw": 255,
+     "w": 255,
+     "reps": 3,
+     "sets": 1,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Bench",
@@ -330,7 +360,12 @@
       }
      ],
      "ps": 2,
-     "pw": 210
+     "pw": 210,
+     "w": 210,
+     "reps": 5,
+     "sets": 2,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Weighted pull-up",
@@ -356,7 +391,12 @@
       }
      ],
      "ps": 3,
-     "pw": 0
+     "pw": 0,
+     "w": 0,
+     "reps": 6,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -417,7 +457,12 @@
       }
      ],
      "ps": 1,
-     "pw": 260
+     "pw": 260,
+     "w": 260,
+     "reps": 3,
+     "sets": 1,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Bench",
@@ -437,7 +482,12 @@
       }
      ],
      "ps": 2,
-     "pw": 215
+     "pw": 215,
+     "w": 215,
+     "reps": 5,
+     "sets": 2,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Weighted pull-up",
@@ -463,7 +513,12 @@
       }
      ],
      "ps": 3,
-     "pw": 0
+     "pw": 0,
+     "w": 0,
+     "reps": 7,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -531,7 +586,12 @@
       }
      ],
      "ps": 1,
-     "pw": 265
+     "pw": 265,
+     "w": 265,
+     "reps": 2,
+     "sets": 0,
+     "clean": false,
+     "done": true
     },
     {
      "lift": "Bench",
@@ -551,7 +611,12 @@
       }
      ],
      "ps": 2,
-     "pw": 220
+     "pw": 220,
+     "w": 220,
+     "reps": 5,
+     "sets": 2,
+     "clean": false,
+     "done": true
     },
     {
      "lift": "Weighted pull-up",
@@ -577,7 +642,12 @@
       }
      ],
      "ps": 3,
-     "pw": 5
+     "pw": 5,
+     "w": 5,
+     "reps": 3,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -638,7 +708,12 @@
       }
      ],
      "ps": 1,
-     "pw": 265
+     "pw": 265,
+     "w": 265,
+     "reps": 3,
+     "sets": 1,
+     "clean": false,
+     "done": true
     },
     {
      "lift": "Bench",
@@ -658,7 +733,12 @@
       }
      ],
      "ps": 2,
-     "pw": 220
+     "pw": 220,
+     "w": 220,
+     "reps": 5,
+     "sets": 2,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Weighted pull-up",
@@ -684,7 +764,12 @@
       }
      ],
      "ps": 3,
-     "pw": 5
+     "pw": 5,
+     "w": 5,
+     "reps": 3,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -748,11 +833,27 @@
        "w": 245,
        "reps": 3,
        "tgt": 3,
-       "st": "ok"
+       "st": "ok",
+       "vid": {
+        "n": 3,
+        "v": [
+         0.42,
+         0.39,
+         0.33
+        ],
+        "loss": 0.21,
+        "rir": 2,
+        "at": 1788220800000
+       }
       }
      ],
      "ps": 1,
-     "pw": 245
+     "pw": 245,
+     "w": 245,
+     "reps": 3,
+     "sets": 1,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Bench",
@@ -772,7 +873,12 @@
       }
      ],
      "ps": 2,
-     "pw": 200
+     "pw": 200,
+     "w": 200,
+     "reps": 5,
+     "sets": 2,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Weighted pull-up",
@@ -798,7 +904,12 @@
       }
      ],
      "ps": 3,
-     "pw": 5
+     "pw": 5,
+     "w": 5,
+     "reps": 3,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -859,7 +970,12 @@
       }
      ],
      "ps": 1,
-     "pw": 345
+     "pw": 345,
+     "w": 345,
+     "reps": 3,
+     "sets": 1,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Deadlift",
@@ -879,7 +995,12 @@
       }
      ],
      "ps": 2,
-     "pw": 275
+     "pw": 275,
+     "w": 275,
+     "reps": 4,
+     "sets": 2,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Legs-up bench",
@@ -905,7 +1026,12 @@
       }
      ],
      "ps": 3,
-     "pw": 170
+     "pw": 170,
+     "w": 170,
+     "reps": 6,
+     "sets": 3,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "RDL",
@@ -929,7 +1055,12 @@
        "tgt": 8,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 225,
+     "reps": 8,
+     "sets": 3,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Bent-over row",
@@ -953,7 +1084,12 @@
        "tgt": 8,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 135,
+     "reps": 8,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -1010,22 +1146,16 @@
        "w": 355,
        "reps": 3,
        "tgt": 3,
-       "st": "ok",
-       "vid": {
-        "n": 3,
-        "v": [
-         0.42,
-         0.39,
-         0.33
-        ],
-        "loss": 0.21,
-        "rir": 2,
-        "at": 1788220800000
-       }
+       "st": "ok"
       }
      ],
      "ps": 1,
-     "pw": 355
+     "pw": 355,
+     "w": 355,
+     "reps": 3,
+     "sets": 1,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Deadlift",
@@ -1045,7 +1175,12 @@
       }
      ],
      "ps": 2,
-     "pw": 285
+     "pw": 285,
+     "w": 285,
+     "reps": 4,
+     "sets": 2,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Legs-up bench",
@@ -1071,7 +1206,12 @@
       }
      ],
      "ps": 3,
-     "pw": 170
+     "pw": 170,
+     "w": 170,
+     "reps": 7,
+     "sets": 3,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "RDL",
@@ -1095,7 +1235,12 @@
        "tgt": 8,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 225,
+     "reps": 8,
+     "sets": 3,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Bent-over row",
@@ -1119,7 +1264,12 @@
        "tgt": 9,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 135,
+     "reps": 9,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -1180,7 +1330,12 @@
       }
      ],
      "ps": 1,
-     "pw": 365
+     "pw": 365,
+     "w": 365,
+     "reps": 3,
+     "sets": 1,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Deadlift",
@@ -1200,7 +1355,12 @@
       }
      ],
      "ps": 2,
-     "pw": 295
+     "pw": 295,
+     "w": 295,
+     "reps": 4,
+     "sets": 2,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Legs-up bench",
@@ -1226,7 +1386,12 @@
       }
      ],
      "ps": 3,
-     "pw": 170
+     "pw": 170,
+     "w": 170,
+     "reps": 8,
+     "sets": 3,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "RDL",
@@ -1250,7 +1415,12 @@
        "tgt": 8,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 225,
+     "reps": 8,
+     "sets": 3,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Bent-over row",
@@ -1274,7 +1444,12 @@
        "tgt": 10,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 135,
+     "reps": 10,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {
@@ -1335,7 +1510,12 @@
       }
      ],
      "ps": 1,
-     "pw": 365
+     "pw": 365,
+     "w": 365,
+     "reps": 3,
+     "sets": 1,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Deadlift",
@@ -1355,7 +1535,12 @@
       }
      ],
      "ps": 2,
-     "pw": 295
+     "pw": 295,
+     "w": 295,
+     "reps": 4,
+     "sets": 2,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Legs-up bench",
@@ -1381,7 +1566,12 @@
       }
      ],
      "ps": 3,
-     "pw": 180
+     "pw": 180,
+     "w": 180,
+     "reps": 6,
+     "sets": 3,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "RDL",
@@ -1405,7 +1595,12 @@
        "tgt": 8,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 225,
+     "reps": 8,
+     "sets": 3,
+     "clean": true,
+     "done": true
     },
     {
      "lift": "Bent-over row",
@@ -1429,7 +1624,12 @@
        "tgt": 11,
        "st": "ok"
       }
-     ]
+     ],
+     "w": 135,
+     "reps": 11,
+     "sets": 3,
+     "clean": true,
+     "done": true
     }
    ],
    "fingers": {

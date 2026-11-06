@@ -1,3 +1,4 @@
+/* Stats tab: dashboard, charts, maxes moved, limit stats. (Its body-model panels are frozen/stats-model.js.) */
 import { S, daysAgo, isFinger, liftName, sorted } from "../core/state.js";
 import { epley, esc, fmtDate, gradeN, num, r5, shortD } from "../core/util.js";
 import { LIMIT_PLAN, MAIN, PROGRESS, STACK_ORDER, TYPES } from "../data/types.js";

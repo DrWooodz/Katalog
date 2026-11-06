@@ -1,3 +1,4 @@
+/* A new session: pull-up/row progression (pullPlan), plan rows for a day (defaultRows, planFor), newDraft, % text. */
 import { S, adaptive, asOf, deloadOn, lastWhere, liftName, refDay } from "../core/state.js";
 import { epley, r5, today, uid } from "../core/util.js";
 import { PDAY } from "../data/plans.js";

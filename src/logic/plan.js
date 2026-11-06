@@ -1,3 +1,4 @@
+/* The current plan (curPlan, planDayList, planWeek), plate-aware bar rounding (rBar, barStep, upBar, repsFirst), plates available. */
 import { S, refDay } from "../core/state.js";
 import { dayNum, num } from "../core/util.js";
 import { PDAY, PLANS } from "../data/plans.js";

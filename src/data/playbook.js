@@ -1,3 +1,4 @@
+/* Method tab cards: prescription, progression, back-off rules and evidence. Numbers come from rules.js. */
 import { HS_LEVELS, WRIST_PHASES } from "./plans.js";
 import { DEFAULT_PROFILE } from "./types.js";
 import { ACC_PLAN, BACKOFF, BO_REPS, DELOAD, GAPS, HAND, HANG, HANGS, JUMP, MAINT, PULL_BW, PULLING as PG, REENTRY, SOLID, TOP, TOP_REPS_MAX, WRIST, pct, pctOff } from "./rules.js";

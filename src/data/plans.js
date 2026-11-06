@@ -1,3 +1,4 @@
+/* Goal tiers, the weekly floor, plan days (PDAY), plans (PLANS: Foundation + old examples), coverage rule, wrist phases, handstand levels. */
 import { WRIST } from "./rules.js";
 
 /* ---------- goals, floor and plans (v31) ----------

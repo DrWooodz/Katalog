@@ -1,3 +1,4 @@
+/* Set-by-set rows: ensureSL, deriveRow, setClean, cleanSets/workSets, progView (what a row means for progression), fmtSets. */
 import { sorted } from "../core/state.js";
 import { num } from "../core/util.js";
 import { PULL } from "../data/types.js";

@@ -1,3 +1,4 @@
+/* This week's plan days: gaps and readiness (dayGate, gates), what to do today (suggestion), the floor check, 7-day meters. */
 import { S, daysAgo, inRef, isFinger, lastWhere, liftName, refDay } from "../core/state.js";
 import { dnStr, mondayN } from "../core/util.js";
 import { FLOOR, PDAY } from "../data/plans.js";

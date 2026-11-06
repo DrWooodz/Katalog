@@ -1,3 +1,4 @@
+/* render(): draws the current tab into #main; setTab(). */
 import { S } from "../core/state.js";
 import { $, esc, lsSet } from "../core/util.js";
 import { TYPES } from "../data/types.js";

@@ -1,3 +1,4 @@
+/* SVG charts: line chart, sparkline, KPI tiles, calendar heatmap, stacked bars, weekly buckets. */
 import { S } from "../core/state.js";
 import { dayNum, dnStr, esc, fmtDate, mondayN, shortD, today } from "../core/util.js";
 import { PRIORITY, STACK_ORDER, TYPES } from "../data/types.js";

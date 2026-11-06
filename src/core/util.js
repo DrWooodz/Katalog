@@ -1,3 +1,4 @@
+/* Small helpers: $, esc, num, rounding (r5), dates (today, dayNum, fmtDate, addDays, mondayN), epley, localStorage get/set, toast. */
 /* ---------- utils ---------- */
 export const $ = s => document.querySelector(s);
 export const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));

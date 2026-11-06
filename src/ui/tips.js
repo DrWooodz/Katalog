@@ -1,3 +1,4 @@
+/* Tooltips on chart marks (hover and tap). */
 /* ---------- tooltips (hover on desktop, tap on phone) ---------- */
 export const TIP = document.getElementById("tip");
 export function placeTip(x,y){ const r = TIP.getBoundingClientRect(); let l = x+12, t = y-r.height-12; if (l+r.width > innerWidth-8) l = x-r.width-12; if (l<8) l = 8; if (t<8) t = y+18; TIP.style.left = l+"px"; TIP.style.top = t+"px"; }

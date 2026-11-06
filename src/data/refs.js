@@ -1,3 +1,4 @@
+/* References cited in Method and Stats, and the evidence-grade labels. */
 /* ---------- references (all checked against the source or its abstract) ---------- */
 export const REFS = {
   vol:{t:"Schoenfeld, Ogborn & Krieger 2017. Dose-response relationship between weekly resistance training volume and increases in muscle mass: a systematic review and meta-analysis. J Sports Sci 35(11):1073–1082", u:"https://doi.org/10.1080/02640414.2016.1210197"},

@@ -1,3 +1,4 @@
+/* Skins (Chalk, Ink Blade, Arcade, Summit) and their labels. */
 import { S } from "../core/state.js";
 import { lsSet, toast } from "../core/util.js";
 import { saveProfile } from "../store/store.js";

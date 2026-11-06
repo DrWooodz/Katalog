@@ -1,3 +1,4 @@
+/* Method tab (renders data/playbook.js and data/compendium.js). */
 import { GAPS } from "../data/rules.js";
 import { esc } from "../core/util.js";
 import { COMPENDIUM } from "../data/compendium.js";

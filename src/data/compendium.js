@@ -1,3 +1,4 @@
+/* Method tab movement compendium. */
 /* Movement compendium: worthwhile movements, whether or not the plan uses them today.
    [name, status, grade, note]. status: "plan" = programmed now, "swap" = a sensible substitute, "option" = situational.
    Grades follow GRADE_LABEL; most movement-choice calls are coaching convention, and the sheet says so. */

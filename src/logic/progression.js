@@ -1,3 +1,4 @@
+/* Main-lift progression: workMax, nextTop, nextBackoff, test days, re-entry, accessories (nextAccInfo), stalled. */
 import { REF, S, adaptive, daysAgo, deloadOn, inRef, liftName, sorted } from "../core/state.js";
 import { epley, fmtDate, num, r5 } from "../core/util.js";
 import { REGION } from "../data/plans.js";

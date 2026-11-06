@@ -4,7 +4,7 @@
    S.sessions and S.profile stay the in-memory copies every tab reads; this file keeps IndexedDB in step with them. */
 import { S } from "../core/state.js";
 import { $, today, toast } from "../core/util.js";
-import { DEFAULT_PROFILE } from "../data/types.js";
+import { mergeProfile } from "../logic/profile.js";
 import { bodyCache } from "../frozen/sim-bridge.js";
 import { render } from "../ui/render.js";
 import { applySkin } from "../ui/skins.js";
@@ -14,11 +14,7 @@ let storeReadyDone;
 export const storeReady = new Promise(r=>{ storeReadyDone = r; });
 
 /* ---------- storage ---------- */
-export function mergeProfile(p){
-  const base = JSON.parse(JSON.stringify(DEFAULT_PROFILE));
-  if (!p) return base;
-  return Object.assign(base, p, {oneRM:Object.assign(base.oneRM, p.oneRM||{}), goals:Object.assign(base.goals, p.goals||{})});
-}
+export { mergeProfile };
 const failMsg = e => e && (e.name==="QuotaExceededError" || e.code===22) ? "Storage full. Export a backup and delete old sessions." : "Couldn't save on this device. Try again.";
 export async function saveSession(s){
   const i = S.sessions.findIndex(x=>x.id===s.id);

@@ -1,3 +1,4 @@
+/* Input changes on the Log and Setup tabs. */
 import { S } from "../core/state.js";
 import { num } from "../core/util.js";
 import { fingerInfo } from "../logic/climb.js";

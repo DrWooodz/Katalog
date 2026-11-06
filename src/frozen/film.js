@@ -1,3 +1,4 @@
+/* FROZEN. Film a set sheet. Loaded only when opened. */
 import { S } from "../core/state.js";
 import { esc, toast } from "../core/util.js";
 import { SIM_BRIDGE, bodyCache, simReady } from "./sim-bridge.js";

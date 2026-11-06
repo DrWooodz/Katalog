@@ -1,3 +1,4 @@
+/* History tab and the one-line session summaries. */
 import { S, sorted } from "../core/state.js";
 import { esc, fmtDate, num } from "../core/util.js";
 import { HS_LEVELS } from "../data/plans.js";
