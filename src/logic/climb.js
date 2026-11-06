@@ -1,6 +1,7 @@
 import { S, adaptive, daysAgo, deloadOn, isFinger, refDay, sorted } from "../core/state.js";
 import { num } from "../core/util.js";
-import { HANGS, PROG_RANK } from "../data/types.js";
+import { PROG_RANK } from "../data/types.js";
+import { DELOAD, HANG, HANGS, SOLID, pct } from "../data/rules.js";
 import { plateStep, rStep } from "./plan.js";
 import { bwAt } from "./status.js";
 
@@ -21,11 +22,13 @@ export function limitTargets(){
   const PM = projectMap();
   let solid = null;
   // solid grade = the hardest grade with 2+ problems sent within 3 tries in the last 90 days. Limit work sits one to two grades above it.
-  for (let g=12; g>=0; g--){ if (PM.filter(p=>p.grade==="V"+g && p.sent && p.sentAtt && p.sentAtt<=3 && daysAgo(p.last)<=90).length>=2){ solid = g; break; } }
+  for (let g=12; g>=0; g--){ if (PM.filter(p=>p.grade==="V"+g && p.sent && p.sentAtt && p.sentAtt<=SOLID.tries && daysAgo(p.last)<=SOLID.days).length>=SOLID.sends){ solid = g; break; } }
   if (solid!=null){ const z = Math.min(12, solid+1), z2 = Math.min(12, solid+2);
     Object.assign(t, {grade:"V"+solid, project:"V"+z, zone:z, zoneTxt:"V"+z+(z2>z?"–V"+z2:""), ramp:"V"+Math.max(0, solid-3)+"–V"+solid}); }
   return t;
 }
+/* Max hangs, no microloading: at a load, earn hangs first (4 → 5 → 6 clean 10 s hangs), then add one plate step (your smallest
+   plate) and go back to 4 hangs. B = ~80% of A's total load, rounded to the plate step. First session after 10+ days off: light. */
 export function fingerInfo(){
   const f = sorted().filter(isFinger);
   const bw = bwAt(refDay()), st = plateStep();
@@ -33,8 +36,8 @@ export function fingerInfo(){
   const ramp = first ? daysAgo(first) < 14 : true;
   const week = f.filter(s=>daysAgo(s.date)<7).length;
   const lastTest = f.find(s=>s.fingers.test);
-  const testDue = !lastTest ? f.length>=4 : daysAgo(lastTest.date) > 42;
-  if (!f.length) return {a:0, b:rStep(bw*0.8-bw), ha:HANGS.lo, hb:HANGS.lo, ramp:true, week, last:null, testDue:false, why:"Find a load you could hold ~12–14 s, "+HANGS.lo+" hangs"};
+  const testDue = !lastTest ? f.length>=4 : daysAgo(lastTest.date) > HANG.testEveryDays;
+  if (!f.length) return {a:0, b:rStep(bw*HANG.bPct-bw), ha:HANGS.lo, hb:HANGS.lo, ramp:true, week, last:null, testDue:false, why:"Find a load you could hold ~12–14 s, "+HANGS.lo+" hangs"};
   // A = heavy session progression; B = ~80% of A's total load (Devise 2022: 80% kept strength gains and added endurance)
   const lastA = f.find(s=>!s.fingers.light) || f[0];
   const last = lastA.fingers, lastAdd = num(last.added)||0, n = Math.max(HANGS.lo, Math.min(HANGS.hi, num(last.hangs)||HANGS.lo));
@@ -42,10 +45,10 @@ export function fingerInfo(){
   if (!last.clean){ why = "repeat "+(lastAdd>=0?"+":"")+lastAdd+" lb × "+n+" until every hang holds"; }
   else if (n < HANGS.hi){ ha = n+1; why = "last heavy hangs clean: one more hang ("+ha+"), same load"; }
   else { aLoad = lastAdd+st; ha = HANGS.lo; why = "earned "+HANGS.hi+" clean hangs: +"+st+" lb (one plate) and back to "+HANGS.lo; }
-  const b = rStep((bw+aLoad)*0.8 - bw), hb = Math.max(HANGS.lo, Math.min(HANGS.hi, ha));
-  if (deloadOn()) return {a:b, b, ha:3, hb:3, ramp, week, last:f[0], testDue:false, deload:true, why:"Deload week: light load (~80%) only, 3–4 hangs"};
+  const b = rStep((bw+aLoad)*HANG.bPct - bw), hb = Math.max(HANGS.lo, Math.min(HANGS.hi, ha));
+  if (deloadOn()) return {a:b, b, ha:DELOAD.hangs, hb:DELOAD.hangs, ramp, week, last:f[0], testDue:false, deload:true, why:"Deload week: light load (~"+pct(HANG.bPct)+"%) only, "+DELOAD.hangs+"–"+(DELOAD.hangs+1)+" hangs"};
   const gap = daysAgo(f[0].date);
-  if (gap >= 10) return {a:b, b, ha:HANGS.lo, hb:HANGS.lo, ramp, week, last:f[0], testDue, back:true, why:"first hangs in "+gap+" days: light load (~80%), "+HANGS.lo+" hangs, then pick up the heavy progression"};
+  if (gap >= HANG.returnGapDays) return {a:b, b, ha:HANGS.lo, hb:HANGS.lo, ramp, week, last:f[0], testDue, back:true, why:"first hangs in "+gap+" days: light load (~"+pct(HANG.bPct)+"%), "+HANGS.lo+" hangs, then pick up the heavy progression"};
   return {a:aLoad, b, ha, hb, ramp, week, last:f[0], testDue, why};
 }
 export function newProb(){ return {name:"", grade:"V"+limitTargets().zone, attempts:0, prog:"", style:""}; }

@@ -1,0 +1,1961 @@
+{
+ "profile": {
+  "oneRM": {
+   "bench": 285,
+   "dead": 395,
+   "squat": 405,
+   "ohp": 135
+  },
+  "goals": {
+   "bench": {
+    "w": 315,
+    "r": 3
+   },
+   "dead": {
+    "w": 405,
+    "r": 3
+   },
+   "squat": {
+    "w": 405,
+    "r": 3
+   },
+   "ohp": {
+    "w": 135,
+    "r": 8
+   }
+  },
+  "bw": 176,
+  "mode": "adaptive",
+  "edge": 20,
+  "skin": "chalk",
+  "deloadUntil": "",
+  "lastDeload": "2026-08-30",
+  "bwLog": [
+   {
+    "d": "2026-09-01",
+    "w": 175.5
+   }
+  ],
+  "plan": {
+   "id": "foundation",
+   "start": "2026-10-05"
+  },
+  "planDays": 4,
+  "unknown": {
+   "squat": true,
+   "ohp": true
+  },
+  "floors": {
+   "squat": 225,
+   "ohp": 90
+  },
+  "plates": [
+   45,
+   35,
+   25,
+   10,
+   5
+  ],
+  "bar": 45,
+  "blockStart": "2026-09-14",
+  "detrained": {}
+ },
+ "sessions": [
+  {
+   "id": "syn001",
+   "date": "2026-09-14",
+   "type": "squat",
+   "created": 1789405200000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Squat",
+     "role": "top",
+     "sl": [
+      {
+       "w": 255,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      },
+      {
+       "w": 255,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      },
+      {
+       "w": 255,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ]
+    }
+   ],
+   "fingers": {
+    "done": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": false,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 7,
+   "duration": 55
+  },
+  {
+   "id": "syn002",
+   "date": "2026-09-16",
+   "type": "ohp",
+   "created": 1789578000000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "OHP",
+     "role": "top",
+     "sl": [
+      {
+       "w": 95,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 95,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 95,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      }
+     ]
+    }
+   ],
+   "fingers": {
+    "done": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": false,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 6,
+   "duration": 40
+  },
+  {
+   "id": "syn003",
+   "date": "2026-09-21",
+   "type": "bench",
+   "created": 1790010000000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Bench",
+     "role": "top",
+     "sl": [
+      {
+       "w": 250,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 1,
+     "pw": 250
+    },
+    {
+     "lift": "Bench",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 205,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 205,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 205
+    },
+    {
+     "lift": "Weighted pull-up",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 0,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 0,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 0,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 0
+    }
+   ],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 10,
+    "secs": 10,
+    "hangs": 4,
+    "clean": true,
+    "light": false,
+    "test": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 10,
+     "reps": 12,
+     "sets": 3
+    },
+    "flex": {
+     "w": 15,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": 1,
+   "wrist": true,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 7,
+   "duration": 60
+  },
+  {
+   "id": "syn004",
+   "date": "2026-09-28",
+   "type": "bench",
+   "created": 1790614800000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Bench",
+     "role": "top",
+     "sl": [
+      {
+       "w": 255,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 1,
+     "pw": 255
+    },
+    {
+     "lift": "Bench",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 210,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 210,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 210
+    },
+    {
+     "lift": "Weighted pull-up",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 0,
+       "reps": 6,
+       "tgt": 6,
+       "st": "ok"
+      },
+      {
+       "w": 0,
+       "reps": 6,
+       "tgt": 6,
+       "st": "ok"
+      },
+      {
+       "w": 0,
+       "reps": 6,
+       "tgt": 6,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 0
+    }
+   ],
+   "fingers": {
+    "done": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 10,
+     "reps": 12,
+     "sets": 3
+    },
+    "flex": {
+     "w": 15,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": 1,
+   "wrist": true,
+   "handstand": false,
+   "bw": 176,
+   "notes": "",
+   "rpe": 7.5,
+   "duration": 63
+  },
+  {
+   "id": "syn005",
+   "date": "2026-10-05",
+   "type": "bench",
+   "created": 1791219600000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Bench",
+     "role": "top",
+     "sl": [
+      {
+       "w": 260,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 1,
+     "pw": 260
+    },
+    {
+     "lift": "Bench",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 215,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 215,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 215
+    },
+    {
+     "lift": "Weighted pull-up",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 0,
+       "reps": 7,
+       "tgt": 7,
+       "st": "ok"
+      },
+      {
+       "w": 0,
+       "reps": 7,
+       "tgt": 7,
+       "st": "ok"
+      },
+      {
+       "w": 0,
+       "reps": 7,
+       "tgt": 7,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 0
+    }
+   ],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 10,
+    "secs": 10,
+    "hangs": 5,
+    "clean": true,
+    "light": false,
+    "test": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 10,
+     "reps": 12,
+     "sets": 3
+    },
+    "flex": {
+     "w": 15,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": 1,
+   "wrist": true,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 8,
+   "duration": 66
+  },
+  {
+   "id": "syn006",
+   "date": "2026-10-12",
+   "type": "bench",
+   "created": 1791824400000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Bench",
+     "role": "top",
+     "sl": [
+      {
+       "w": 265,
+       "reps": 2,
+       "tgt": 3,
+       "st": "miss"
+      }
+     ],
+     "ps": 1,
+     "pw": 265
+    },
+    {
+     "lift": "Bench",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 220,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 220,
+       "reps": 4,
+       "tgt": 5,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 220
+    },
+    {
+     "lift": "Weighted pull-up",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 5,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      },
+      {
+       "w": 5,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      },
+      {
+       "w": 5,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 5
+    }
+   ],
+   "fingers": {
+    "done": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 15,
+     "reps": 12,
+     "sets": 3
+    },
+    "flex": {
+     "w": 15,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": 1,
+   "wrist": true,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 7,
+   "duration": 69
+  },
+  {
+   "id": "syn007",
+   "date": "2026-10-19",
+   "type": "bench",
+   "created": 1792429200000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "y"
+   },
+   "lifts": [
+    {
+     "lift": "Bench",
+     "role": "top",
+     "sl": [
+      {
+       "w": 265,
+       "reps": 3,
+       "tgt": 3,
+       "st": "grind"
+      }
+     ],
+     "ps": 1,
+     "pw": 265
+    },
+    {
+     "lift": "Bench",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 220,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 220,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 220
+    },
+    {
+     "lift": "Weighted pull-up",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 5,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      },
+      {
+       "w": 5,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      },
+      {
+       "w": 5,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 5
+    }
+   ],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 10,
+    "secs": 10,
+    "hangs": 6,
+    "clean": true,
+    "light": false,
+    "test": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 15,
+     "reps": 12,
+     "sets": 3
+    },
+    "flex": {
+     "w": 15,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": 6,
+   "wrist": true,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 7.5,
+   "duration": 72
+  },
+  {
+   "id": "syn008",
+   "date": "2026-10-26",
+   "type": "bench",
+   "created": 1793034000000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Bench",
+     "role": "top",
+     "sl": [
+      {
+       "w": 245,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 1,
+     "pw": 245
+    },
+    {
+     "lift": "Bench",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 200,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      },
+      {
+       "w": 200,
+       "reps": 5,
+       "tgt": 5,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 200
+    },
+    {
+     "lift": "Weighted pull-up",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 5,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      },
+      {
+       "w": 5,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      },
+      {
+       "w": 5,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 5
+    }
+   ],
+   "fingers": {
+    "done": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 15,
+     "reps": 12,
+     "sets": 3
+    },
+    "flex": {
+     "w": 15,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": 1,
+   "wrist": true,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 8,
+   "duration": 75
+  },
+  {
+   "id": "syn009",
+   "date": "2026-09-23",
+   "type": "dead",
+   "created": 1790182800000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Deadlift",
+     "role": "top",
+     "sl": [
+      {
+       "w": 345,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 1,
+     "pw": 345
+    },
+    {
+     "lift": "Deadlift",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 275,
+       "reps": 4,
+       "tgt": 4,
+       "st": "ok"
+      },
+      {
+       "w": 275,
+       "reps": 4,
+       "tgt": 4,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 275
+    },
+    {
+     "lift": "Legs-up bench",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 170,
+       "reps": 6,
+       "tgt": 6,
+       "st": "ok"
+      },
+      {
+       "w": 170,
+       "reps": 6,
+       "tgt": 6,
+       "st": "ok"
+      },
+      {
+       "w": 170,
+       "reps": 6,
+       "tgt": 6,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 170
+    },
+    {
+     "lift": "RDL",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      }
+     ]
+    },
+    {
+     "lift": "Bent-over row",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 135,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 135,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 135,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      }
+     ]
+    }
+   ],
+   "fingers": {
+    "done": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 15,
+     "reps": 10,
+     "sets": 3
+    },
+    "flex": {
+     "w": 20,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": true,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 8,
+   "duration": 70
+  },
+  {
+   "id": "syn010",
+   "date": "2026-10-07",
+   "type": "dead",
+   "created": 1791392400000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Deadlift",
+     "role": "top",
+     "sl": [
+      {
+       "w": 355,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok",
+       "vid": {
+        "n": 3,
+        "v": [
+         0.42,
+         0.39,
+         0.33
+        ],
+        "loss": 0.21,
+        "rir": 2,
+        "at": 1788220800000
+       }
+      }
+     ],
+     "ps": 1,
+     "pw": 355
+    },
+    {
+     "lift": "Deadlift",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 285,
+       "reps": 4,
+       "tgt": 4,
+       "st": "ok"
+      },
+      {
+       "w": 285,
+       "reps": 4,
+       "tgt": 4,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 285
+    },
+    {
+     "lift": "Legs-up bench",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 170,
+       "reps": 7,
+       "tgt": 7,
+       "st": "ok"
+      },
+      {
+       "w": 170,
+       "reps": 7,
+       "tgt": 7,
+       "st": "ok"
+      },
+      {
+       "w": 170,
+       "reps": 7,
+       "tgt": 7,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 170
+    },
+    {
+     "lift": "RDL",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      }
+     ]
+    },
+    {
+     "lift": "Bent-over row",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 135,
+       "reps": 9,
+       "tgt": 9,
+       "st": "ok"
+      },
+      {
+       "w": 135,
+       "reps": 9,
+       "tgt": 9,
+       "st": "ok"
+      },
+      {
+       "w": 135,
+       "reps": 9,
+       "tgt": 9,
+       "st": "ok"
+      }
+     ]
+    }
+   ],
+   "fingers": {
+    "done": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 15,
+     "reps": 10,
+     "sets": 3
+    },
+    "flex": {
+     "w": 20,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": true,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 8,
+   "duration": 70
+  },
+  {
+   "id": "syn011",
+   "date": "2026-10-21",
+   "type": "dead",
+   "created": 1792602000000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Deadlift",
+     "role": "top",
+     "sl": [
+      {
+       "w": 365,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 1,
+     "pw": 365
+    },
+    {
+     "lift": "Deadlift",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 295,
+       "reps": 4,
+       "tgt": 4,
+       "st": "ok"
+      },
+      {
+       "w": 295,
+       "reps": 4,
+       "tgt": 4,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 295
+    },
+    {
+     "lift": "Legs-up bench",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 170,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 170,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 170,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 170
+    },
+    {
+     "lift": "RDL",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      }
+     ]
+    },
+    {
+     "lift": "Bent-over row",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 135,
+       "reps": 10,
+       "tgt": 10,
+       "st": "ok"
+      },
+      {
+       "w": 135,
+       "reps": 10,
+       "tgt": 10,
+       "st": "ok"
+      },
+      {
+       "w": 135,
+       "reps": 10,
+       "tgt": 10,
+       "st": "ok"
+      }
+     ]
+    }
+   ],
+   "fingers": {
+    "done": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 15,
+     "reps": 10,
+     "sets": 3
+    },
+    "flex": {
+     "w": 20,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": true,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 8,
+   "duration": 70
+  },
+  {
+   "id": "syn012",
+   "date": "2026-11-02",
+   "type": "dead",
+   "created": 1793638800000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [
+    {
+     "lift": "Deadlift",
+     "role": "top",
+     "sl": [
+      {
+       "w": 365,
+       "reps": 3,
+       "tgt": 3,
+       "st": "ok"
+      }
+     ],
+     "ps": 1,
+     "pw": 365
+    },
+    {
+     "lift": "Deadlift",
+     "role": "backoff",
+     "sl": [
+      {
+       "w": 295,
+       "reps": 4,
+       "tgt": 4,
+       "st": "ok"
+      },
+      {
+       "w": 295,
+       "reps": 4,
+       "tgt": 4,
+       "st": "ok"
+      }
+     ],
+     "ps": 2,
+     "pw": 295
+    },
+    {
+     "lift": "Legs-up bench",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 180,
+       "reps": 6,
+       "tgt": 6,
+       "st": "ok"
+      },
+      {
+       "w": 180,
+       "reps": 6,
+       "tgt": 6,
+       "st": "ok"
+      },
+      {
+       "w": 180,
+       "reps": 6,
+       "tgt": 6,
+       "st": "ok"
+      }
+     ],
+     "ps": 3,
+     "pw": 180
+    },
+    {
+     "lift": "RDL",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      },
+      {
+       "w": 225,
+       "reps": 8,
+       "tgt": 8,
+       "st": "ok"
+      }
+     ]
+    },
+    {
+     "lift": "Bent-over row",
+     "role": "acc",
+     "sl": [
+      {
+       "w": 135,
+       "reps": 11,
+       "tgt": 11,
+       "st": "ok"
+      },
+      {
+       "w": 135,
+       "reps": 11,
+       "tgt": 11,
+       "st": "ok"
+      },
+      {
+       "w": 135,
+       "reps": 11,
+       "tgt": 11,
+       "st": "ok"
+      }
+     ]
+    }
+   ],
+   "fingers": {
+    "done": false
+   },
+   "climb": {
+    "on": false
+   },
+   "wb": {
+    "done": true,
+    "phase": 1,
+    "ext": {
+     "w": 15,
+     "reps": 10,
+     "sets": 3
+    },
+    "flex": {
+     "w": 20,
+     "reps": 12,
+     "sets": 3
+    },
+    "iso": true,
+    "dev": true,
+    "rocks": true,
+    "leans": ""
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": true,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 8,
+   "duration": 70
+  },
+  {
+   "id": "syn013",
+   "date": "2026-09-24",
+   "type": "limit",
+   "created": 1790269200000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 10,
+    "secs": 10,
+    "hangs": 4,
+    "clean": true,
+    "light": false,
+    "test": false
+   },
+   "climb": {
+    "on": true,
+    "list": [
+     {
+      "name": "Red cave",
+      "grade": "V6",
+      "attempts": 6,
+      "prog": "sent",
+      "style": "Crimp"
+     },
+     {
+      "name": "Blue roof",
+      "grade": "V7",
+      "attempts": 8,
+      "prog": "high",
+      "style": "Steep power"
+     },
+     {
+      "name": "",
+      "grade": "V6",
+      "attempts": 3,
+      "prog": "sent",
+      "style": "Sloper"
+     }
+    ],
+    "stop": "quality",
+    "send": "V6",
+    "tried": "V7",
+    "problems": 3
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": false,
+   "handstand": false,
+   "bw": 177.5,
+   "notes": "",
+   "rpe": 8,
+   "duration": 90
+  },
+  {
+   "id": "syn014",
+   "date": "2026-10-01",
+   "type": "limit",
+   "created": 1790874000000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 10,
+    "secs": 10,
+    "hangs": 5,
+    "clean": true,
+    "light": false,
+    "test": false
+   },
+   "climb": {
+    "on": true,
+    "list": [
+     {
+      "name": "Blue roof",
+      "grade": "V7",
+      "attempts": 5,
+      "prog": "sent",
+      "style": "Steep power"
+     },
+     {
+      "name": "Green arete",
+      "grade": "V7",
+      "attempts": 4,
+      "prog": "half",
+      "style": "Pinch"
+     },
+     {
+      "name": "",
+      "grade": "V6",
+      "attempts": 2,
+      "prog": "sent",
+      "style": "Crimp"
+     }
+    ],
+    "stop": "fingers",
+    "send": "V7",
+    "tried": "V7",
+    "problems": 3
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": false,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 8,
+   "duration": 90
+  },
+  {
+   "id": "syn015",
+   "date": "2026-10-15",
+   "type": "limit",
+   "created": 1792083600000,
+   "readiness": {
+    "fingers": "y",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 15,
+    "secs": 10,
+    "hangs": 6,
+    "clean": false,
+    "light": false,
+    "test": false
+   },
+   "climb": {
+    "on": true,
+    "list": [
+     {
+      "name": "Green arete",
+      "grade": "V7",
+      "attempts": 6,
+      "prog": "moves",
+      "style": "Pinch"
+     },
+     {
+      "name": "Black slab",
+      "grade": "V8",
+      "attempts": 7,
+      "prog": "few",
+      "style": "Slab / technical"
+     },
+     {
+      "name": "",
+      "grade": "V7",
+      "attempts": 3,
+      "prog": "sent",
+      "style": "Crimp"
+     }
+    ],
+    "stop": "fingers",
+    "send": "V7",
+    "tried": "V8",
+    "problems": 3
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": false,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 8,
+   "duration": 90
+  },
+  {
+   "id": "syn016",
+   "date": "2026-10-29",
+   "type": "limit",
+   "created": 1793293200000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 15,
+    "secs": 10,
+    "hangs": 4,
+    "clean": true,
+    "light": false,
+    "test": false
+   },
+   "climb": {
+    "on": true,
+    "list": [
+     {
+      "name": "Black slab",
+      "grade": "V8",
+      "attempts": 9,
+      "prog": "half",
+      "style": "Slab / technical"
+     },
+     {
+      "name": "",
+      "grade": "V7",
+      "attempts": 2,
+      "prog": "sent",
+      "style": "Crimp"
+     },
+     {
+      "name": "",
+      "grade": "V7",
+      "attempts": 3,
+      "prog": "sent",
+      "style": "Dyno / coordination"
+     }
+    ],
+    "stop": "plan",
+    "send": "V7",
+    "tried": "V8",
+    "problems": 3
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": false
+   },
+   "wristPain": "",
+   "wrist": false,
+   "handstand": false,
+   "bw": "",
+   "notes": "",
+   "rpe": 8,
+   "duration": 90
+  },
+  {
+   "id": "syn017",
+   "date": "2026-09-26",
+   "type": "light",
+   "created": 1790442000000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 0,
+    "secs": 10,
+    "hangs": 4,
+    "clean": true,
+    "light": true,
+    "test": false
+   },
+   "climb": {
+    "on": true,
+    "send": "V5",
+    "tried": "V6",
+    "attempts": 2,
+    "problems": 8
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": true,
+    "level": 1,
+    "best": 62,
+    "time": 248,
+    "tries": 6
+   },
+   "wristPain": 2,
+   "wrist": false,
+   "handstand": true,
+   "bw": "",
+   "notes": "",
+   "rpe": 5,
+   "duration": 50
+  },
+  {
+   "id": "syn018",
+   "date": "2026-10-03",
+   "type": "light",
+   "created": 1791046800000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 0,
+    "secs": 10,
+    "hangs": 4,
+    "clean": true,
+    "light": true,
+    "test": false
+   },
+   "climb": {
+    "on": true,
+    "send": "V5",
+    "tried": "V6",
+    "attempts": 2,
+    "problems": 8
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": true,
+    "level": 1,
+    "best": 65,
+    "time": 260,
+    "tries": 6
+   },
+   "wristPain": 2,
+   "wrist": false,
+   "handstand": true,
+   "bw": "",
+   "notes": "",
+   "rpe": 5,
+   "duration": 50
+  },
+  {
+   "id": "syn019",
+   "date": "2026-10-10",
+   "type": "light",
+   "created": 1791651600000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 0,
+    "secs": 10,
+    "hangs": 4,
+    "clean": true,
+    "light": true,
+    "test": false
+   },
+   "climb": {
+    "on": true,
+    "send": "V5",
+    "tried": "V6",
+    "attempts": 2,
+    "problems": 8
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": true,
+    "level": 2,
+    "best": 12,
+    "time": 48,
+    "tries": 6
+   },
+   "wristPain": 2,
+   "wrist": false,
+   "handstand": true,
+   "bw": "",
+   "notes": "",
+   "rpe": 5,
+   "duration": 50
+  },
+  {
+   "id": "syn020",
+   "date": "2026-10-17",
+   "type": "light",
+   "created": 1792256400000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 0,
+    "secs": 10,
+    "hangs": 4,
+    "clean": true,
+    "light": true,
+    "test": false
+   },
+   "climb": {
+    "on": true,
+    "send": "V5",
+    "tried": "V6",
+    "attempts": 2,
+    "problems": 8
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": true,
+    "level": 2,
+    "best": 16,
+    "time": 64,
+    "tries": 6
+   },
+   "wristPain": 4,
+   "wrist": false,
+   "handstand": true,
+   "bw": "",
+   "notes": "",
+   "rpe": 5,
+   "duration": 50
+  },
+  {
+   "id": "syn021",
+   "date": "2026-10-24",
+   "type": "light",
+   "created": 1792861200000,
+   "readiness": {
+    "fingers": "g",
+    "back": "g",
+    "press": "g"
+   },
+   "lifts": [],
+   "fingers": {
+    "done": true,
+    "edge": 20,
+    "added": 0,
+    "secs": 10,
+    "hangs": 4,
+    "clean": true,
+    "light": true,
+    "test": false
+   },
+   "climb": {
+    "on": true,
+    "send": "V5",
+    "tried": "V6",
+    "attempts": 2,
+    "problems": 8
+   },
+   "wb": {
+    "done": false
+   },
+   "hs": {
+    "done": true,
+    "level": 2,
+    "best": 18,
+    "time": 72,
+    "tries": 6
+   },
+   "wristPain": 2,
+   "wrist": false,
+   "handstand": true,
+   "bw": "",
+   "notes": "",
+   "rpe": 5,
+   "duration": 50
+  }
+ ]
+}

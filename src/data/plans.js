@@ -1,3 +1,5 @@
+import { WRIST } from "./rules.js";
+
 /* ---------- goals, floor and plans (v31) ----------
    Plans are data. The engine reads the current plan's lifts, targets, days and end conditions from here; nothing about a
    specific plan is written into the progression logic, so a future plan editor can create, copy and edit these objects. */
@@ -63,8 +65,8 @@ export const COVERAGE = ["hand","ohp","squat"];
 export const REGION = {bench:"press", ohp:"press", dead:"back", squat:"back"};
 /* ---------- wrist + handstand structure ---------- */
 export const WRIST_PHASES = {
-  1:{name:"Foundation", items:"Wrist extension + flexion curls 3×8–12 (3 s lowering) · deviation 2×12 each way · iso extension pulses 30×2 s · quadruped wrist rocks 3×10", advance:"6 sessions in phase, last 3 with wrist pain ≤2/10, curls at 3×12"},
-  2:{name:"Loaded extension", items:"Heavier curls 4×6–10, 3 s up / 3 s down · iso pulses 30×2 s · planche leans 3×20–30 s · push-up-position wrist rocks 3×10", advance:"6 sessions in phase, pain ≤2/10, leans held 30 s with straight arms"},
+  1:{name:"Foundation", items:"Wrist extension + flexion curls 3×8–12 (3 s lowering) · deviation 2×12 each way · iso extension pulses 30×2 s · quadruped wrist rocks 3×10", advance:WRIST.advanceSessions+" sessions in phase, last "+WRIST.calmSessions+" with wrist pain ≤"+WRIST.painUp+"/10, curls at "+WRIST.sets[1]+"×"+WRIST.top[1]},
+  2:{name:"Loaded extension", items:"Heavier curls 4×6–10, 3 s up / 3 s down · iso pulses 30×2 s · planche leans 3×20–30 s · push-up-position wrist rocks 3×10", advance:WRIST.advanceSessions+" sessions in phase, pain ≤"+WRIST.painUp+"/10, leans held "+WRIST.leanSecs+" s with straight arms"},
   3:{name:"Capacity", items:"Curls 4×6–8 heavy-slow · deeper planche leans 4×20–30 s · wall-handstand weight shifts 3×30 s · iso pulses 30×2 s", advance:"Maintenance: keep 2×/week, add load by double progression"}
 };
 export const HS_LEVELS = {

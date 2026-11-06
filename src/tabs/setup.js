@@ -1,3 +1,4 @@
+import { JUMP, MAXMODE, TOP, pct, pctOff } from "../data/rules.js";
 import { S, adaptive } from "../core/state.js";
 import { esc, fmtDate, r5 } from "../core/util.js";
 import { PLATE_SET, TYPES } from "../data/types.js";
@@ -10,8 +11,8 @@ export function vSetup(){
   const p = S.profile;
   let h = '<div class="panel"><h2>How targets are set</h2><label class="f">Target mode<select id="p-mode"><option value="adaptive"'+(adaptive()?' selected':'')+'>Adaptive: adjust from your logs (recommended)</option><option value="max"'+(!adaptive()?' selected':'')+'>Max-based: fixed % of saved maxes</option></select></label>'+
     '<p class="hint">'+(adaptive()
-      ? 'Top sets go up 5 lb after a clean triple, repeat after a miss, and drop 7.5% after two misses. Back-offs and accessories follow a working max taken from your clean sets in the last 6 weeks, and drop if you miss them. A so-so readiness tap takes 5% off heavy sets. Limit-bouldering volume follows your own good sessions and is cut after a session that ended on fingers.'
-      : 'Every lift target is a fixed percentage of the saved maxes below: 89% top triple, 80% back-off. Hang loads still come from your last hang session, since there is no saved hang max.')+'</p></div>';
+      ? 'Top sets go up '+JUMP.upper+' lb (upper body) or '+JUMP.lower+' lb (lower body) after a clean triple, repeat after a miss, and drop '+pctOff(TOP.dropTo)+'% after two misses. Back-offs and accessories follow a working max taken from your clean sets in the last 6 weeks, and drop if you miss them. A so-so readiness tap takes '+pctOff(TOP.soSoPct)+'% off heavy sets. Limit-bouldering volume follows your own good sessions and is cut after a session that ended on fingers.'
+      : 'Every lift target is a fixed percentage of the saved maxes below: '+pct(MAXMODE.topPct)+'% top triple, '+pct(MAXMODE.backoffPct)+'% back-off. Hang loads still come from your last hang session, since there is no saved hang max.')+'</p></div>';
   h += '<div class="panel"><h2>Look</h2><div class="skins">'+Object.keys(SKINS).map(k=>'<button class="skinopt" data-act="skin" data-k="'+k+'" aria-pressed="'+(skinKey()===k)+'"><span class="sw">'+SKINS[k].sw.map(c=>'<i style="background:'+c+';border:1px solid var(--line)"></i>').join("")+'</span><b>'+esc(SKINS[k].name)+'</b><span class="hint">'+esc(SKINS[k].desc)+'</span></button>').join("")+'</div><p class="hint">Skins change the look and a few labels. They don\'t change any numbers.</p></div>';
   h += '<div class="panel"><h2>Out of practice</h2><p class="hint">Ticked lifts start with the re-entry ramp (3×5 from 70%) the first time you train them. A lift also goes back to re-entry after 6 weeks without heavy work.</p><div class="row">'+
     ["bench","dead","squat","ohp"].map(k=>'<label class="check"><input type="checkbox" data-detr="'+k+'" id="detr-'+k+'"'+((p.detrained||{})[k]?' checked':'')+'> '+TYPES[k].short+'</label>').join("")+'</div></div>';

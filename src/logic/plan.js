@@ -2,6 +2,7 @@ import { S, refDay } from "../core/state.js";
 import { dayNum, num } from "../core/util.js";
 import { PDAY, PLANS } from "../data/plans.js";
 import { DEFAULT_PROFILE, PLATE_DEF } from "../data/types.js";
+import { JUMP } from "../data/rules.js";
 
 /* ---------- the current plan ---------- */
 export function curPlan(){ const pp = S.profile.plan || DEFAULT_PROFILE.plan; return PLANS[pp.id] || PLANS.foundation; }
@@ -18,7 +19,7 @@ export function planWeek(){ return Math.max(1, Math.floor((dayNum(refDay()) - da
    (two of your smallest plate). If your plates allow the desired jump, the bar goes up by it; if not (e.g. no 2.5s, so the
    smallest bar jump is 10), the work grows by reps first (top set 3 -> 4 -> 5 reps), then one barStep. All bar weights are
    rounded to something you can actually load. */
-export const jumpFor = key => (key==="squat"||key==="dead") ? 10 : 5;
+export const jumpFor = key => (key==="squat"||key==="dead") ? JUMP.lower : JUMP.upper;
 export const barStep = () => 2*plateStep();
 export const repsFirst = key => barStep() > jumpFor(key);
 export const rBar = x => { const b = barWeight(), st = barStep(); return x>0 ? Math.max(b, b + Math.round((x-b)/st)*st) : x; };

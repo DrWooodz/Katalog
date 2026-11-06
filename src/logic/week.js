@@ -2,6 +2,7 @@ import { S, daysAgo, inRef, isFinger, lastWhere, liftName, refDay } from "../cor
 import { dnStr, mondayN } from "../core/util.js";
 import { FLOOR, PDAY } from "../data/plans.js";
 import { MAIN, TYPES } from "../data/types.js";
+import { GAPS } from "../data/rules.js";
 import { curPlan, planDayIds, planDayList } from "./plan.js";
 import { workMax } from "./progression.js";
 import { workSets } from "./sets.js";
@@ -29,12 +30,12 @@ export function dayGate(sp){
   const benchS = since(s=>s.type==="bench"), deadS = since(s=>s.type==="dead");
   const fingerS = since(s=>isFinger(s) || s.type==="limit");
   let since0 = null, min = 0, blocked = false, why = "";
-  if (sp.type==="bench"){ since0 = benchS; min = 2; blocked = blk.press; why = "pressing flagged red"; }
-  else if (sp.type==="dead"){ since0 = deadS; min = 4; blocked = blk.back; why = "back/legs flagged red"; }
-  else if (sp.type==="limit"){ since0 = fingerS; min = 2; blocked = blk.fingers; why = "fingers flagged red"; }
+  if (sp.type==="bench"){ since0 = benchS; min = GAPS.bench; blocked = blk.press; why = "pressing flagged red"; }
+  else if (sp.type==="dead"){ since0 = deadS; min = GAPS.dead; blocked = blk.back; why = "back/legs flagged red"; }
+  else if (sp.type==="limit"){ since0 = fingerS; min = GAPS.finger; blocked = blk.fingers; why = "fingers flagged red"; }
   const wait = since0==null ? 0 : Math.max(0, min - since0);
   // hangs on this day: only when fingers aren't red and the last finger day was 2+ days ago
-  const hangsOk = !!sp.hangs && !blk.fingers && (fingerS==null || fingerS>=2 || sp.type==="limit");
+  const hangsOk = !!sp.hangs && !blk.fingers && (fingerS==null || fingerS>=GAPS.finger || sp.type==="limit");
   return {since:since0, min, wait, blocked, blockWhy:why, ready:!blocked && wait===0, hangsOk};
 }
 export function gates(){

@@ -1,3 +1,4 @@
+import { GAPS } from "../data/rules.js";
 import { S, adaptive, daysAgo, deloadOn, liftName } from "../core/state.js";
 import { esc, fmtDate, today } from "../core/util.js";
 import { COVERAGE, GOAL_NAME, HS_LEVELS, PDAY, WRIST_PHASES } from "../data/plans.js";
@@ -50,7 +51,7 @@ export function vToday(){
     const since = g.since==null ? (g.min ? "not logged yet" : "") : (g.since===0 ? "today" : g.since+"d ago");
     const pill = g.done ? '<span class="pill wait">Done this week</span>' : g.blocked ? '<span class="pill block">Blocked</span>' : (g.ready ? '<span class="pill ready">'+(g.optional ? 'Optional' : 'Ready')+'</span>' : '<span class="pill wait">Wait '+g.wait+'d</span>');
     return '<div class="gate"><span class="name">'+esc(g.name)+'</span><span class="since">'+since+'</span>'+pill+'</div>';
-  }).join("")+'</div><p class="hint">'+esc(P.name)+' days this week. Gaps: bench 2d, deadlift 4d, finger days (hangs or limit) 2d apart; hangs A ride on the limit day.</p></div>';
+  }).join("")+'</div><p class="hint">'+esc(P.name)+' days this week. Gaps: bench '+GAPS.bench+'d, deadlift '+GAPS.dead+'d, finger days (hangs or limit) '+GAPS.finger+'d apart; hangs A ride on the limit day.</p></div>';
   h += '<div class="panel"><div class="spread"><h2>Next targets</h2><span class="hint">'+(adaptive()?'Adaptive · from your logs':'Max-based · fixed % of saved maxes')+'</span></div><div class="targets">';
   const keys = planLifts().concat(P.maint);
   keys.forEach(k=>{

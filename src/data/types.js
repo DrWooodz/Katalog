@@ -25,27 +25,12 @@ export const DEFAULT_PROFILE = {
   plan:{id:"foundation", start:"2026-11-04"}, planDays:4,
   unknown:{squat:true, ohp:true}, floors:{squat:225, ohp:90}
 };
-export const TOP_REPS_MAX = 5;
-/* Max hangs, no microloading: at a load, earn hangs first (4 → 5 → 6 clean 10 s hangs), then add one plate step (your smallest
-   plate) and go back to 4 hangs. B = ~80% of A's total load, rounded to the plate step. First session after 10+ days off: light. */
-export const HANGS = {lo:4, hi:6};
 /* ---------- the model in the log ----------
    Setup cues, missed-set notes and filmed sets use the simulator's helpers (the same file the Build tab loads, fetched only
    when a lift here has a model). They only compute. The one thing they add to your log is a short summary on a set, and only
    when you press Save on a filmed set: reps tracked, rep speeds, speed loss and the reps-in-reserve estimate. The video is never
    uploaded or kept. */
 export const SIM_LIFTS = {Bench:1, "Tempo bench":1, "Legs-up bench":1, Deadlift:1, "Tempo deadlift":1, Squat:1, OHP:1, RDL:1, "Bent-over row":1, "Weighted pull-up":1, "Fast pull-up":1};
-/* ----- log form ----- */
-export const BO_REPS = {bench:5, dead:4, squat:5, ohp:8};
-/* ---- pulling: weighted pull-up (heavy), fast pull-up (power intent), bent-over row ----
-   No microloading. Weight is ADDED load (0 = bodyweight).
-   Heavy: at bodyweight, earn reps first: 3×5 → 3×8, one rep per clean session. Then +5 lb added at 3×3, and with added load
-   double progression 3 → 5 reps, then +5 lb and back to 3.
-   Fast: 5×3 at bodyweight up to +10% BW; every rep max-speed. Mark a set clean only if no rep slowed. Clean → +5 lb (cap 10% BW).
-   Row: 3×8 barbell, earn 3×10, then +5 and back to 8. Deload: same load, 2 sets. */
-export const PULL_BW = {lo:5, hi:8};
-/* accessory rows: [main lift, start % of its max, cap % of working max, rep range low, high] */
-export const ACC_PLAN = {"RDL":["dead",0.55,0.6,6,8], "Legs-up bench":["bench",0.65,0.7,6,8]};
 /* ---------- barbell loading (lb) ---------- */
 export const PLATE_SET = [55,45,35,25,15,10,5,2.5,1.25];
 export const PLATE_DEF = [45,35,25,10,5,2.5];
@@ -54,3 +39,5 @@ export const PLATE_LOOK = {55:{c:"#c73a33",h:1,w:12}, 45:{c:"#2d62c2",h:1,w:11},
 export const BARBELL_LIFTS = {Bench:1, Deadlift:1, Squat:1, OHP:1, RDL:1, "Tempo deadlift":1, "Legs-up bench":1, "Tempo bench":1, "Bent-over row":1};
 export const STACK_ORDER = ["bench","dead","light","limit","ohp","squat","other"];
 export const PRIORITY = ["bench","dead","squat","ohp","limit","light","other"];
+/* the training rules moved to rules.js; re-exported so older imports keep working */
+export { TOP_REPS_MAX, HANGS, BO_REPS, PULL_BW, ACC_PLAN } from "./rules.js";

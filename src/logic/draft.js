@@ -2,6 +2,7 @@ import { S, adaptive, asOf, deloadOn, lastWhere, liftName, refDay } from "../cor
 import { epley, r5, today, uid } from "../core/util.js";
 import { PDAY } from "../data/plans.js";
 import { ACC_PLAN, BO_REPS, MAIN, PULL, PULL_BW, TYPES } from "../data/types.js";
+import { PULLING as PG, pct } from "../data/rules.js";
 import { fingerInfo, newProb } from "./climb.js";
 import { barStep, planDayList, rBar } from "./plan.js";
 import { nextAccInfo, nextBackoff, nextTop, workMax } from "./progression.js";
@@ -10,35 +11,41 @@ import { bwAt } from "./status.js";
 import { doneDayIds } from "./week.js";
 import { newHand, newWrist } from "./wrist.js";
 
+/* ---- pulling: weighted pull-up (heavy), fast pull-up (power intent), bent-over row ----
+   No microloading. Weight is ADDED load (0 = bodyweight).
+   Heavy: at bodyweight, earn reps first: 3×5 → 3×8, one rep per clean session. Then +5 lb added at 3×3, and with added load
+   double progression 3 → 5 reps, then +5 lb and back to 3.
+   Fast: 5×3 at bodyweight up to +10% BW; every rep max-speed. Mark a set clean only if no rep slowed. Clean → +5 lb (cap 10% BW).
+   Row: 3×8 barbell, earn 3×10, then +5 and back to 8. Deload: same load, 2 sets. */
 export function pullPlan(lift){
   const P = PULL[lift], dl = deloadOn(), bw = bwAt(refDay());
   const last = rowsOf(lift, ()=>true).filter(r=>!r.under)[0];
   const lw = last ? r1(last.w) : 0, lt = lw ? "+"+lw : "BW";
   const tg = last ? Math.max(r1(last.reps), Array.isArray(last.sl) && last.sl.length ? Math.max.apply(null, last.sl.map(x=>r1(x.tgt))) : 0) : 0;
   if (P.mode==="heavy"){
-    if (!last) return {w:0, reps:PULL_BW.lo, sets:dl?2:3, why:"First time: bodyweight, 3×"+PULL_BW.lo+". Earn bodyweight reps before adding load"};
+    if (!last) return {w:0, reps:PULL_BW.lo, sets:dl?2:PG.sets, why:"First time: bodyweight, "+PG.sets+"×"+PULL_BW.lo+". Earn bodyweight reps before adding load"};
     if (dl) return {w:lw, reps:lw ? 3 : Math.max(PULL_BW.lo, tg), sets:2, why:"Deload: same load, 2 sets"};
     if (!lw){
       const r = Math.max(PULL_BW.lo, tg||PULL_BW.lo);
-      if (!last.clean) return {w:0, reps:r, sets:3, why:"repeat bodyweight 3×"+r+" until every set is clean"};
-      if (r < PULL_BW.hi) return {w:0, reps:r+1, sets:3, why:"bodyweight 3×"+r+" was clean: add a rep (bodyweight reps first, up to 3×"+PULL_BW.hi+")"};
-      return {w:5, reps:3, sets:3, why:"earned bodyweight 3×"+PULL_BW.hi+": add 5 lb and restart at 3 reps"};
+      if (!last.clean) return {w:0, reps:r, sets:PG.sets, why:"repeat bodyweight "+PG.sets+"×"+r+" until every set is clean"};
+      if (r < PULL_BW.hi) return {w:0, reps:r+1, sets:PG.sets, why:"bodyweight "+PG.sets+"×"+r+" was clean: add a rep (bodyweight reps first, up to "+PG.sets+"×"+PULL_BW.hi+")"};
+      return {w:PG.addStep, reps:PG.addedLo, sets:PG.sets, why:"earned bodyweight "+PG.sets+"×"+PULL_BW.hi+": add "+PG.addStep+" lb and restart at "+PG.addedLo+" reps"};
     }
-    if (last.clean) return tg>=5 ? {w:lw+5, reps:3, sets:3, why:"last "+lt+" 3×5 clean, add 5 lb and restart at 3 reps"} : {w:lw, reps:tg+1, sets:3, why:"last "+lt+" for "+tg+" was clean, add a rep"};
-    return {w:lw, reps:tg||5, sets:3, why:"repeat "+lt+" for "+(tg||5)+" until every set is clean"};
+    if (last.clean) return tg>=PG.addedHi ? {w:lw+PG.addStep, reps:PG.addedLo, sets:PG.sets, why:"last "+lt+" "+PG.sets+"×"+PG.addedHi+" clean, add "+PG.addStep+" lb and restart at "+PG.addedLo+" reps"} : {w:lw, reps:tg+1, sets:PG.sets, why:"last "+lt+" for "+tg+" was clean, add a rep"};
+    return {w:lw, reps:tg||PG.addedHi, sets:PG.sets, why:"repeat "+lt+" for "+(tg||PG.addedHi)+" until every set is clean"};
   }
   if (P.mode==="fast"){
-    const cap = r5(bw*0.10);
+    const cap = r5(bw*PG.fastCapBW);
     if (!last) return {w:0, reps:3, sets:dl?3:5, why:"Bodyweight, 5×3. Pull as fast as you can on every rep and stop the set when one slows"};
     if (dl) return {w:lw, reps:3, sets:3, why:"Deload: same load, 3 sets"};
-    if (last.clean && lw+5 <= cap) return {w:lw+5, reps:3, sets:5, why:"last sets were all fast, +5 (cap "+cap+" lb ≈ 10% BW)"};
-    return {w:lw, reps:3, sets:5, why:last.clean ? "at the "+cap+" lb (≈10% BW) cap: keep speed, don't add load" : "repeat: every rep must stay fast"};
+    if (last.clean && lw+PG.addStep <= cap) return {w:lw+PG.addStep, reps:PG.fastReps, sets:PG.fastSets, why:"last sets were all fast, +"+PG.addStep+" (cap "+cap+" lb ≈ "+pct(PG.fastCapBW)+"% BW)"};
+    return {w:lw, reps:PG.fastReps, sets:PG.fastSets, why:last.clean ? "at the "+cap+" lb (≈"+pct(PG.fastCapBW)+"% BW) cap: keep speed, don't add load" : "repeat: every rep must stay fast"};
   }
-  const rj = Math.max(5, barStep()), start = rBar(workMax("bench").v*0.5), rr = Math.min(10, Math.max(8, tg||8));
-  if (!last) return {w:start, reps:8, sets:dl?2:3, why:"Starting guess ~50% of bench working max. Flat back, bar to lower ribs, adjust after set 1"};
-  if (dl) return {w:lw, reps:8, sets:2, why:"Deload: same load, 2 sets"};
-  if (!last.clean) return {w:lw, reps:rr, sets:3, why:"repeat "+lw+" until 3×"+rr+" are clean"};
-  return rr < 10 ? {w:lw, reps:rr+1, sets:3, why:"last "+lw+" 3×"+rr+" was clean: add a rep (up to 10), then +"+rj} : {w:rBar(lw+rj), reps:8, sets:3, why:"earned "+lw+" 3×10: +"+rj+" and back to 8"};
+  const rj = Math.max(PG.rowMinJump, barStep()), start = rBar(workMax("bench").v*PG.rowStartPct), rr = Math.min(PG.rowHi, Math.max(PG.rowLo, tg||PG.rowLo));
+  if (!last) return {w:start, reps:PG.rowLo, sets:dl?2:PG.sets, why:"Starting guess ~"+pct(PG.rowStartPct)+"% of bench working max. Flat back, bar to lower ribs, adjust after set 1"};
+  if (dl) return {w:lw, reps:PG.rowLo, sets:2, why:"Deload: same load, 2 sets"};
+  if (!last.clean) return {w:lw, reps:rr, sets:PG.sets, why:"repeat "+lw+" until "+PG.sets+"×"+rr+" are clean"};
+  return rr < PG.rowHi ? {w:lw, reps:rr+1, sets:PG.sets, why:"last "+lw+" "+PG.sets+"×"+rr+" was clean: add a rep (up to "+PG.rowHi+"), then +"+rj} : {w:rBar(lw+rj), reps:PG.rowLo, sets:PG.sets, why:"earned "+lw+" "+PG.sets+"×"+PG.rowHi+": +"+rj+" and back to "+PG.rowLo};
 }
 /* Dead and squat days carry ONE other pull, rotating whichever was done least recently, so lower days stay cheap */
 export function didLift(lift){ return s => (s.lifts||[]).some(l=>l.lift===lift && ((Array.isArray(l.sl) && l.sl.some(x=>x.st)) || l.done)); }
